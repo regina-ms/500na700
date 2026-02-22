@@ -1,0 +1,57 @@
+.popup {
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--base);
+  color: var(--bg-color);
+  max-width: 520px;
+  width: 100%;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    .header {
+      font: var(--header200);
+      text-transform: uppercase;
+    }
+
+    .closeButton {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 3px;
+        background-color: var(--bg-color);
+        top: 50%;
+        left: 0;
+      }
+
+      &:after {
+        rotate: -45deg;
+      }
+
+      &:before {
+        rotate: 45deg;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .popup {
+    padding: 20px;
+
+    .top {
+      margin-bottom: 16px;
+    }
+
+  }
+}

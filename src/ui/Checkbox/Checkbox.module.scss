@@ -1,0 +1,65 @@
+.checkboxLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  font: var(--text-base300);
+  text-transform: uppercase;
+  color: var(--bg-color50);
+
+  p {
+    width: 80%;
+  }
+
+  .errorMsg {
+    width: 100%;
+    margin-top: 5px;
+    color: red;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .fakeCheckbox {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      padding: 1.5px;
+      background-image: var(--gradient-background);
+      border-radius: inherit;
+      mask:
+        linear-gradient(#000 0 0) exclude,
+        linear-gradient(#000 0 0) content-box;
+    }
+  }
+
+  &:has(input:checked) {
+    .fakeCheckbox {
+      background: var(--gradient-background);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: none;
+      }
+
+      &::after {
+        content: "\2714";
+        color: var(--base);
+      }
+    }
+  }
+}

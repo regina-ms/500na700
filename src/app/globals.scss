@@ -1,0 +1,108 @@
+:root {
+  --base-width: 1440;
+  --base-width_units: calc(var(--base-width) * 1px);
+  --screen-delta: calc(
+    (100vw - var(--base-width_units)) / (var(--base-width) / 100) / 100
+  );
+
+  --base: #ffffff;
+  --base50: hsl(0, 0%, 100%, 0.5);
+  --base30: hsl(0, 0%, 100%, 0.3);
+  --gradient-background: linear-gradient(
+    180deg,
+    hsl(27, 96%, 57%),
+    hsl(299, 76%, 85%)
+  );
+  --bg-color: hsl(240, 21%, 7%);
+  --bg-color50: hsl(240, 21%, 7%, 0.5);
+
+  --header100: 600 4rem/1.1 var(--font-inter);
+  --header200: 600 2.4rem/1.1 var(--font-inter);
+  --header300: 600 2rem/1.1 var(--fony-inter);
+  --header400: 600 1.6rem/1.1 var(--font-inter);
+  --text-base100: 1.6rem/1.3 var(--font-inter);
+  --text-base200: 500 1.6rem/1.3 var(--font-inter);
+  --text-base300: 500 1.2rem/1.3 var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+
+  &:has(.popup-opened) {
+    overflow: hidden;
+  }
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font: var(--text-base100);
+  color: var(--base);
+  background-color: var(--bg-color);
+
+  &:has(.popup-opened) {
+    overflow: hidden;
+  }
+}
+
+h1 {
+  font: var(--header100);
+}
+h2 {
+  font: var(--header200);
+}
+h3 {
+  font: var(--header300);
+}
+h4 {
+  font: var(--header400);
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+button,
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+input,
+input::placeholder {
+  font: var(--text-base100);
+}
+
+button {
+  font: var(--text-base200);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --base-width: 320;
+    --header100: 600 2.4rem/1.1 var(--font-inter);
+    --header200: 600 2rem/1.1 var(--font-inter);
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

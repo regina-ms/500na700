@@ -1,0 +1,26 @@
+.button {
+  border-radius: 40px;
+  position: relative;
+  background: transparent;
+  color: var(--base);
+  border: none;
+  padding: 12px 20px;
+  font: var(--text-base200);
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    padding: 1.5px;
+    background-image: var(--gradient-background);
+    border-radius: inherit;
+    mask:
+        linear-gradient(#000 0 0) exclude,
+        linear-gradient(#000 0 0) content-box;
+  }
+
+  &.dark {
+    color: var(--bg-color);
+  }
+}

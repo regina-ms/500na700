@@ -1,0 +1,57 @@
+.article {
+  padding: 78px 0 150px;
+  display: flex;
+  gap: 20px;
+
+  .image {
+    object-fit: cover;
+    object-position: center;
+    width: 440px;
+    height: 300px;
+  }
+
+  .description {
+    max-width: 496px;
+    width: 100%;
+
+    .title {
+      font: var(--header100);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      color: var(--base50);
+      margin-bottom: 40px;
+    }
+
+    .shortDescr {
+      font: var(--header300);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .article {
+    flex-direction: column;
+    padding: 40px 0 80px;
+    .image {
+      margin-left: -10px;
+      width: 100svw;
+    }
+    .description {
+      .title {
+        margin-bottom: 10px;
+      }
+      .date {
+        margin-bottom: 30px;
+      }
+
+      .shortDescr {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
